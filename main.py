@@ -26,6 +26,17 @@ def ping(ctx):
     return "Pong!"
 
 
+@app.route('/')
+# ‘/’ URL is bound with hello_world() function.
+def hello_world():
+    return 'Hello World'
+
+@app.route('/hello2')
+# ‘/’ URL is bound with hello_world() function.
+def hello_world():
+    return 'Hello World2'
+
+
 # This is the URL that your app will listen for Discord Interactions on
 # Put this into the developer portal
 discord.set_route("/interactions")
