@@ -20,7 +20,7 @@
 		{
 			"key": "TESTING_GUILD",
 			"description": "Testing Guild ID",
-			"required": true
+			"required": false
 		}
 	]
 }
