@@ -3,11 +3,11 @@ import sys
 
 from flask import Flask
 
-from deta_discord_interactions import DiscordInteractions  # noqa: E402
+#from deta_discord_interactions import DiscordInteractions  # noqa: E402
 
 
 app = Flask(__name__)
-discord = DiscordInteractions(app)
+#discord = DiscordInteractions(app)
 
 # Find these in your Discord Developer Portal, store them as environment vars
 app.config["DISCORD_CLIENT_ID"] = os.environ["DISCORD_CLIENT_ID"]
@@ -20,10 +20,10 @@ app.config["DISCORD_CLIENT_SECRET"] = os.environ["DISCORD_CLIENT_SECRET"]
 
 
 # Simplest type of command: respond with a string
-@discord.command()
-def ping(ctx):
-    "Respond with a friendly 'pong'!"
-    return "Pong!"
+#@discord.command()
+#def ping(ctx):
+#    "Respond with a friendly 'pong'!"
+#    return "Pong!"
 
 
 @app.route('/')
@@ -39,7 +39,7 @@ def hello_world():
 
 # This is the URL that your app will listen for Discord Interactions on
 # Put this into the developer portal
-discord.set_route("/interactions")
+#discord.set_route("/interactions")
 
 
 # Register application commands with this
