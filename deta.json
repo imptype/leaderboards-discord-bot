@@ -1,11 +1,26 @@
 {
-	"name": "hello_world",
+	"name": "sent_test",
 	"description": "Deploy to Deta button example",
 	"env": [
 		{
-			"key": "NAME",
-			"description": "Your name",
-			"required": false 
+			"key": "DISCORD_CLIENT_ID",
+			"description": "Discord Client ID",
+			"required": true
+		},
+		{
+			"key": "DISCORD_PUBLIC_KEY",
+			"description": "Discord Public Key",
+			"required": true
+		},
+		{
+			"key": "DISCORD_CLIENT_SECRET",
+			"description": "Discord Client Secret",
+			"required": true
+		},
+		{
+			"key": "TESTING_GUILD",
+			"description": "Testing Guild ID",
+			"required": true
 		}
 	]
 }
