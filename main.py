@@ -7,7 +7,7 @@ from flask import Flask
 
 
 app = Flask(__name__)
-#discord = DiscordInteractions(app)
+discord = DiscordInteractions(app)
 
 # Find these in your Discord Developer Portal, store them as environment vars
 app.config["DISCORD_CLIENT_ID"] = os.environ["DISCORD_CLIENT_ID"]
@@ -20,10 +20,10 @@ app.config["DISCORD_CLIENT_SECRET"] = os.environ["DISCORD_CLIENT_SECRET"]
 
 
 # Simplest type of command: respond with a string
-#@discord.command()
-#def ping(ctx):
-#    "Respond with a friendly 'pong'!"
-#    return "Pong!"
+@discord.command()
+def ping(ctx):
+    "Respond with a friendly 'pong'!"
+    return "Pong!"
 
 
 @app.route('/')
@@ -49,5 +49,5 @@ def hello_world():
 # discord.update_commands(guild_id=os.environ["TESTING_GUILD"])
 
 
-if __name__ == "__main__":
-    app.run()
+#if __name__ == "__main__":
+#    app.run()
