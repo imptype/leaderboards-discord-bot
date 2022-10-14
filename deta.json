@@ -5,17 +5,17 @@
 		{
 			"key": "DISCORD_CLIENT_ID",
 			"description": "Discord Client ID",
-			"required": true
+			"required": false
 		},
 		{
 			"key": "DISCORD_PUBLIC_KEY",
 			"description": "Discord Public Key",
-			"required": true
+			"required": false
 		},
 		{
 			"key": "DISCORD_CLIENT_SECRET",
 			"description": "Discord Client Secret",
-			"required": true
+			"required": false
 		},
 		{
 			"key": "TESTING_GUILD",
