@@ -1,6 +1,7 @@
 {
 	"name": "sent_test",
 	"description": "Deploy to Deta button example",
+	"visor": "enabled",
 	"env": [
 		{
 			"key": "DISCORD_CLIENT_ID",
