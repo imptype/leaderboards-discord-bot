@@ -1,8 +1,8 @@
 import os
-from deta import Base
+#from deta import Base
 from deta_discord_interactions import DiscordInteractions, Member#, Embed
 
-db = Base('ranks')
+db = 1#Base('ranks')
 app = DiscordInteractions()
 staff_role_id = os.getenv('STAFF_ROLE_ID')
 
