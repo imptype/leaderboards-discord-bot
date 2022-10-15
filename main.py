@@ -14,6 +14,10 @@ def index(request, start_response, abort):
 
 @app.route('/update_commands')
 def home(request, start_response, abort):
-    app.update_commands(from_inside_a_micro=True)
+    text = 'updated commands'
+    try:
+        app.update_commands(from_inside_a_micro=True)
+    except Exception as e:
+        text = str(e)
     start_response('200 OK', [])
-    return ['updated commands'.encode('UTF-8')]
+    return [text.encode('UTF-8')]
