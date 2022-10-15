@@ -18,6 +18,7 @@ def home(request, start_response, abort):
     try:
         app.update_commands(from_inside_a_micro=True)
     except Exception as e:
-        text = str(e)
+        func = app.update_commands
+        text = str(e) + str(func.__code__.co_argcount) + str(func.__code__.co_varnames)
     start_response('200 OK', [])
     return [text.encode('UTF-8')]
