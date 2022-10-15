@@ -1,27 +1,31 @@
 {
 	"name": "sent_test",
 	"description": "Deploy to Deta button example",
-	"visor": "enabled",
 	"env": [
 		{
 			"key": "DISCORD_CLIENT_ID",
 			"description": "Discord Client ID",
-			"required": false
+			"required": true
 		},
 		{
 			"key": "DISCORD_PUBLIC_KEY",
 			"description": "Discord Public Key",
-			"required": false
+			"required": true
 		},
 		{
 			"key": "DISCORD_CLIENT_SECRET",
 			"description": "Discord Client Secret",
-			"required": false
+			"required": true
 		},
 		{
-			"key": "TESTING_GUILD",
-			"description": "Testing Guild ID",
-			"required": false
+			"key": "DETA_PROJECT_KEY",
+			"description": "Deta Project Key",
+			"required": true
+		}
+		{
+			"key": "STAFF_ROLE_ID",
+			"description": "Discord Server Staff Role ID",
+			"required": true
 		}
 	]
 }
