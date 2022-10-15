@@ -1,8 +1,8 @@
 import os
-#from deta import Base
-from deta_discord_interactions import DiscordInteractions, Member#, Embed
+from deta import Base
+from deta_discord_interactions import DiscordInteractions, Member, Embed
 
-db = 1#Base('ranks')
+db = Base('ranks')
 app = DiscordInteractions()
 staff_role_id = os.getenv('STAFF_ROLE_ID')
 
@@ -57,12 +57,12 @@ def setpoints(ctx, user : Member, points : int):
     text = 'Set {}\'s points to `{}`.'.format(user.username, points)
     
     return text
-"""
+
 @app.command(description = 'Gets everyone\'s points')
 def getall(ctx, user : Member, points : int):
     
     if staff_role_id not in ctx.author.roles:
-    return 'You are not staff.'
+        return 'You are not staff.'
 
     response = db.fetch()
     data = [tuple(i.values()) for i in response.items]
@@ -77,13 +77,13 @@ def getall(ctx, user : Member, points : int):
         for i, (user_id, points) in enumerate(data)
     )
     
-    #embed = Embed(
-    #    title = '{} entries'.format(len(data)),
-    #    descripton = text[:4096],
-    #    color = 0x7289da
-    #)
+    embed = Embed(
+        title = '{} entries'.format(len(data)),
+        descripton = text[:4096],
+        color = 0x7289da
+    )
    
-    return text[:2000]"""
+    return embed
 
 @app.route('/')
 def index(request, start_response, abort):
