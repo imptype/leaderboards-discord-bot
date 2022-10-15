@@ -13,9 +13,9 @@ def ping(ctx):
 
 @app.command(name = '1v1', description = 'Execute 1v1 match results')
 def _1v1(ctx, winner : Member, loser : Member):
-    if staff_role_id not in get_role_ids(ctx.author.roles):
-        return 'You are not staff'
-    return 'Pong!'
+    #if staff_role_id not in get_role_ids(ctx.author.roles):
+    #    return 'You are not staff'
+    return repr(ctx.author.roles)
 
 @app.command(description = 'Gets a user\'s points')
 def getpoints(ctx, user : Member):
