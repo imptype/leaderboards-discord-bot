@@ -1,17 +1,15 @@
 import os
-from flask import Flask
 from deta_discord_interactions import DiscordInteractions  
 
-app = Flask(__name__)
-discord = DiscordInteractions(app)
+app = DiscordInteractions()
 
-app.config["DISCORD_CLIENT_ID"] = os.environ["DISCORD_CLIENT_ID"]
-app.config["DISCORD_PUBLIC_KEY"] = os.environ["DISCORD_PUBLIC_KEY"]
-app.config["DISCORD_CLIENT_SECRET"] = os.environ["DISCORD_CLIENT_SECRET"]
-
-@discord.command()
+@app.command()
 def ping(ctx):
     "Respond with a friendly 'pong'!"
     return "Pong!"
 
-discord.set_route("/interactions")
+@app.route('/update_commands')
+def home(request, start_response, abort):
+    app.update_commands(from_inside_a_micro=True)
+    start_response('200 OK', [])
+    return ['updated commands'.encode('UTF-8')]
