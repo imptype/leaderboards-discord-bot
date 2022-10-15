@@ -2,6 +2,7 @@ import os
 from deta_discord_interactions import DiscordInteractions, Member
 
 app = DiscordInteractions()
+staff_role_id = 1030830480444108820#os.getenv('STAFF_ROLE_ID')
 
 @app.command(description = 'Ping the bot')
 def ping(ctx):
@@ -9,8 +10,8 @@ def ping(ctx):
 
 @app.command(name = '1v1', description = 'Execute 1v1 match results')
 def _1v1(ctx, winner : Member, loser : Member):
-    # Winner gains 2 points
-    # Loser loses 1 point
+    if staff_role_id not in ctx.author.roles:
+        return 'You are not staff'
     return 'Pong!'
 
 @app.command(description = 'Gets a user\'s points')
@@ -19,6 +20,8 @@ def getpoints(ctx, user : Member):
 
 @app.command(description = 'Sets a user\'s points')
 def setpoints(ctx, user : Member, points : int):
+    if staff_role_id not in ctx.author.roles:
+        return 'You are not staff'
     return 'Pong!'
 
 @app.command(description = 'Gets everyone\'s points')
