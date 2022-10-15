@@ -1,1 +1,1 @@
-deta-discord-interactions
+git+https://github.com/etrotta/deta-discord-interactions@deta
