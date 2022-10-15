@@ -71,7 +71,7 @@ def getall(ctx):
         response = db.fetch(last = response.last)
         data.extend([tuple(i.values()) for i in response.items])
 
-    data.sort(key = lambda x : x[0])
+    data.sort(key = lambda x : x[1], reverse = True)
 
     text = '\n'.join(
         '`{}.` <@{}> - {}'.format(i, user_id, points)
