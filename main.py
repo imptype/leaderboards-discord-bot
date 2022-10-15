@@ -74,7 +74,7 @@ def getall(ctx):
     data.sort(key = lambda x : x[1], reverse = True)
 
     text = '\n'.join(
-        '`{}.` <@{}> - {}'.format(i, user_id, points)
+        '`{}.` <@{}> - {}'.format(i+1, user_id, points)
         for i, (user_id, points) in enumerate(data)
     )
 
