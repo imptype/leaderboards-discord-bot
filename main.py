@@ -4,13 +4,16 @@ from deta_discord_interactions import DiscordInteractions, Member
 app = DiscordInteractions()
 staff_role_id = 1030830480444108820#os.getenv('STAFF_ROLE_ID')
 
+def get_role_ids(roles):
+    return [role.id for role in roles]
+
 @app.command(description = 'Ping the bot')
 def ping(ctx):
     return 'Pong!'
 
 @app.command(name = '1v1', description = 'Execute 1v1 match results')
 def _1v1(ctx, winner : Member, loser : Member):
-    if staff_role_id not in ctx.author.roles:
+    if staff_role_id not in get_role_ids(ctx.author.roles):
         return 'You are not staff'
     return 'Pong!'
 
