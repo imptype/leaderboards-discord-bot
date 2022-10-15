@@ -1,6 +1,6 @@
 {
-	"name": "sent_test",
-	"description": "Deploy to Deta button example",
+	"name": "leaderboards_discord_bot",
+	"description": "Basic leaderboards discord bot",
 	"env": [
 		{
 			"key": "DISCORD_CLIENT_ID",
