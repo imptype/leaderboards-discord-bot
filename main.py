@@ -1,10 +1,10 @@
 import os
 from deta import Base
-from deta_discord_interactions import DiscordInteractions, Member, Embed
+from deta_discord_interactions import DiscordInteractions, Member#, Embed
 
 db = Base('ranks')
 app = DiscordInteractions()
-staff_role_id = str(os.getenv('STAFF_ROLE_ID'))
+staff_role_id = os.getenv('STAFF_ROLE_ID')
 
 def get_points(user_id):
   row = db.get(str(user_id))
@@ -77,13 +77,13 @@ def getall(ctx, user : Member, points : int):
         for i, (user_id, points) in enumerate(data)
     )
     
-    embed = Embed(
-        title = '{} entries'.format(len(data)),
-        descripton = text[:4096],
-        color = 0x7289da
-    )
+    #embed = Embed(
+    #    title = '{} entries'.format(len(data)),
+    #    descripton = text[:4096],
+    #    color = 0x7289da
+    #)
    
-    return embed
+    return text[:2000]
 
 @app.route('/')
 def index(request, start_response, abort):
