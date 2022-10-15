@@ -21,7 +21,7 @@
 			"key": "DETA_PROJECT_KEY",
 			"description": "Deta Project Key",
 			"required": true
-		}
+		},
 		{
 			"key": "STAFF_ROLE_ID",
 			"description": "Discord Server Staff Role ID",
