@@ -37,8 +37,8 @@ def _1v1(ctx, winner : Member, loser : Member):
 
       text = '\n'.join([
           '1v1 Match Results:',
-          'Winner: {} (`{}` -> `{}`)'.format(winner.mention, old_winner_points, new_winner_points),
-          'Loser: {} (`{}` -> `{}`)'.format(loser.mention, old_loser_points, new_loser_points)
+          'Winner: <@{}> (`{}` -> `{}`)'.format(winner.id, old_winner_points, new_winner_points),
+          'Loser: <@{}> (`{}` -> `{}`)'.format(loser.id, old_loser_points, new_loser_points)
       ])
 
       return text
@@ -85,7 +85,7 @@ def getall(ctx, user : Member, points : int):
 
       embed = Embed(
           title = '{} entries'.format(len(data)),
-          descripton = text[:4096],
+          description = text[:4096],
           color = 0x7289da
       )
 
