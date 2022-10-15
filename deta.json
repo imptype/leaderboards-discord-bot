@@ -1,6 +1,6 @@
 {
 	"name": "leaderboards_discord_bot",
-	"description": "Basic leaderboards discord bot",
+	"description": "Basic leaderboards Discord bot",
 	"env": [
 		{
 			"key": "DISCORD_CLIENT_ID",
