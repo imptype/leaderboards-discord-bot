@@ -57,7 +57,7 @@ def setpoints(ctx, user : Member, points : int):
     text = 'Set {}\'s points to `{}`.'.format(user.username, points)
     
     return text
-
+"""
 @app.command(description = 'Gets everyone\'s points')
 def getall(ctx, user : Member, points : int):
     
@@ -83,7 +83,7 @@ def getall(ctx, user : Member, points : int):
     #    color = 0x7289da
     #)
    
-    return text[:2000]
+    return text[:2000]"""
 
 @app.route('/')
 def index(request, start_response, abort):
