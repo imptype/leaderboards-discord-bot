@@ -1,11 +1,28 @@
 import os
-from deta_discord_interactions import DiscordInteractions  
-import traceback
+from deta_discord_interactions import DiscordInteractions, Member
 
 app = DiscordInteractions()
 
-@app.command()
+@app.command(description = 'Ping the bot')
 def ping(ctx):
+    return 'Pong!'
+
+@app.command(name = '1v1', description = 'Execute 1v1 match results')
+def _1v1(ctx, winner : Member, loser : Member):
+    # Winner gains 2 points
+    # Loser loses 1 point
+    return 'Pong!'
+
+@app.command(description = 'Gets a user\'s points')
+def getpoints(ctx, user : Member):
+    return 'Pong!'
+
+@app.command(description = 'Sets a user\'s points')
+def setpoints(ctx, user : Member, points : int):
+    return 'Pong!'
+
+@app.command(description = 'Gets everyone\'s points')
+def getall(ctx, user : Member, points : int):
     return 'Pong!'
 
 @app.route('/')
@@ -15,11 +32,6 @@ def index(request, start_response, abort):
 
 @app.route('/update_commands')
 def home(request, start_response, abort):
-    text = 'updated commands'
-    try:
-        app.update_commands(from_inside_a_micro=True)
-    except Exception as e:
-        func = app.update_commands
-        text = '\n'.join([str(e), str(func), str(func.__code__.co_argcount), str(func.__code__.co_varnames), traceback.format_exc(), func.__doc__])
+    app.update_commands(from_inside_a_micro=True)
     start_response('200 OK', [])
-    return [text.encode('UTF-8')]
+    return ['updated commands'.encode('UTF-8')]
