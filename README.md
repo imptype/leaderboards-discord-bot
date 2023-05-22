@@ -17,10 +17,10 @@ An asterisk (*) means staff can only use it.
 2. Make a new application on [Discord](https://discord.com/developers/applications).
 3. Click the 'Deploy to Deta' button on this repo.
 4. Select your project and enter the environment variables.
-  - `CLIENT_ID` is the ID in https://discord.com/developers/applications/{id}/information
-  - `CLIENT_PUBLIC_KEY` is the key in https://discord.com/developers/applications/{id}/information
-  - `CLIENT_SECRET` is the secret in https://discord.com/developers/applications/{id}/oauth2/general
-  - `STAFF_ROLE_ID` is the ID of a staff role in the discord server.
+    - `CLIENT_ID` is the ID in https://discord.com/developers/applications/{id}/information
+    - `CLIENT_PUBLIC_KEY` is the key in https://discord.com/developers/applications/{id}/information
+    - `CLIENT_SECRET` is the secret in https://discord.com/developers/applications/{id}/oauth2/general
+    - `STAFF_ROLE_ID` is the ID of a staff role in the discord server.
 5. Once deployed, visit this page of the Micro's URL [https://{id}.deta.dev/update_commands](https://deta.sh) to register the slash commands for the first time.
 6. Set the `Interactions Endpoint URL` to [https://{id}.deta.dev/discord](https://deta.sh) in https://discord.com/developers/applications/{id}/information.
 
